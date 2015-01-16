@@ -1,0 +1,19 @@
+﻿@model Eshop.Models.Product[]
+
+@{
+    ViewBag.Title = "Admin/ProductList";
+}
+<a href="@Url.Action("AddProduct")"><div class="glyphicon glyphicon-plus" style="font-size: 25px;"></div></a><br>
+
+@for (int i = 0; i < Model.Length; i++) {
+    <div class="list-group list-group-item active" style="background: #ccc; border: 0; color: #333; margin-bottom: 15px;">
+        <a href="@Url.Action("DeleteProduct", "Admin", new { ID = Model[i].ProductID }, null)" style="font-size: 300%; top: 50%; right: 10px; float: right;">
+            <div class="glyphicon glyphicon-trash"></div>
+        </a>
+        <a href="@Url.Action("EditProduct", "Admin", new { ID = Model[i].ProductID }, null)">
+            <h4 class="list-group-item-heading">@Model[i].Title</h4>
+            <p style="color: #444; font-size: 12px;">@Model[i].Description.Truncate(140)</p>
+        </a>
+    </div>
+}
+

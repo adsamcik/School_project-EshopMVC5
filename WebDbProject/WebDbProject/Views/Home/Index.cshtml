@@ -1,0 +1,46 @@
+﻿@model Eshop.Models.Product[]
+@{
+    ViewBag.Title = "Index";
+}
+
+@using (Html.BeginForm()) {
+    <div class="input-group">
+        <span class="input-group-btn">
+            <input class="btn btn-default" type="submit" value="Search">
+        </span>
+        @Html.TextBox("SearchString", null, new { @class = ("form-control"), placeholder = "Search for..." })
+    </div>
+}
+
+<ul class="nav nav-pills">
+    @for (int i = 0; i < ViewBag.categories.Length; i++) {
+        if (ViewBag.filterCategory == ViewBag.categories[i].CategoryID) {
+            <li role="presentation" class="active"><a href="@Url.Action("Index", null, new { filterCategory = ViewBag.categories[i].CategoryID})">@ViewBag.categories[i].Name</a></li>
+        }
+        else {
+            <li role="presentation"><a href="@Url.Action("Index", null, new { filterCategory = ViewBag.categories[i].CategoryID})">@ViewBag.categories[i].Name</a></li>
+        }
+    }
+</ul>
+
+
+@if (Model.Length == 0) { <text><div class="alert alert-danger" role="alert" style="font-size: 18px; text-align: center;">Oh snap.. Nothing was found</div></text>
+}
+else {
+    for (int i = 0; i < Model.Length; i++) {
+<div class="col-xs-6 col-sm-3 product">
+    <img src="@Model[i].Image" style="height: 250px;max-width: 100%;">
+    <header>@Html.ActionLink(Model[i].Title, "Product", "Home", new { ID = Model[i].ProductID }, null)</header>
+    @if (@Model[i].Description.Length > 140) { @(Model[i].Description.Substring(0, Model[i].Description.IndexOf(" ", 140)) + "...");
+    }
+    else {@Model[i].Description;
+    }
+    <div class="price">
+        Stocked @Model[i].Stock
+        <div class="without">@(Math.Round((1 + (Model[i].Vat / 100)) * Model[i].Price)) Kč</div>
+        <div class="with">@Model[i].Price excl. VAT</div>
+    </div>
+</div>
+    }
+}
+

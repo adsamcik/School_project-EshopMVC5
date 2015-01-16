@@ -1,0 +1,43 @@
+﻿@model Eshop.Models.Product
+@{
+    ViewBag.Title = @Model.Title;
+}
+
+<div class="productPage">
+    <img src="@Model.Image" style="float:right; width:33%;">
+    <h2>@Model.Title</h2>
+    <h4>We have @Model.Stock avaiable</h4>
+    <h4>One costs @Model.Price Kč</h4>
+    <p>@Model.Description</p>
+
+
+    <div class="well well-lg" style="width: 80%; margin: auto;clear: both;">
+        @using (@Html.BeginForm("AddReview", "Home", FormMethod.Post)) {
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">@@</span>
+                <input name="name" type="text" class="form-control" placeholder="name" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon" id="basic-addon1">+</span>
+                <textarea class="form-control" name="plus" cols="40" rows="5" placeholder="Advantages of the product" aria-describedby="basic-addon1"></textarea>
+                <span class="input-group-addon" id="basic-addon1">-</span>
+                <textarea class="form-control" name="minus" cols="40" rows="5" placeholder="Disadvantages of the product" aria-describedby="basic-addon1"></textarea>
+            </div>
+            <input type="hidden" name="productID" value="@Model.ProductID" />
+            <input type="submit" value="Add review" class="btn btn-default navbar-btn" />
+        }
+    </div>
+    <br>
+    @for (int i = 0; i < Model.Reviews.Length; i++) {
+        <div class="review">
+            <header>@Model.Reviews[i].Author</header>
+            <div class="plusminus">
+                <div class="plus">@Model.Reviews[i].Plus</div>
+                <div class="minus">@Model.Reviews[i].Minus</div>
+            </div>
+        </div>
+    }
+
+</div>
+
+

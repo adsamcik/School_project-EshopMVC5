@@ -1,0 +1,48 @@
+﻿@model Eshop.Models.Product
+
+@{
+    ViewBag.Title = "Add Product";
+}
+
+<div class="editor" style="margin: 0 auto; width: 60%; font-size: 12px;">
+    @using (Html.BeginForm("Add", "Admin", FormMethod.Post)) {
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">@Html.LabelFor(x => x.Title)</span>
+            @Html.TextBoxFor(x => x.Title, null, new { @class = ("form-control"), placeholder = "Title" })
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">@Html.LabelFor(x => x.Price)</span>
+            @Html.TextBoxFor(x => x.Price, null, new { @class = ("form-control"), placeholder = "Price" })
+        </div>
+
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">@Html.LabelFor(x => x.Stock)</span>
+            @Html.TextBoxFor(x => x.Stock, null, new { @class = ("form-control"), placeholder = "Stock" })
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">
+                <label for="Category">Category</label>
+            </span>
+            <select name="Category" class="btn btn-default btn-sm dropdown-toggle">
+                @for (int i = 0; i < ViewBag.categories.Length; i++) {
+                    <option>@ViewBag.categories[i].Name</option>
+                }
+            </select>
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">@Html.LabelFor(x => x.Description)</span>
+            @Html.TextBoxFor(x => x.Description, null, new { @class = ("form-control"), placeholder = "Description" })
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">@Html.LabelFor(x => x.Image)</span>
+            @Html.TextBoxFor(x => x.Image, null, new { @class = ("form-control"), placeholder = "Image adress" })
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">@Html.LabelFor(x => x.Visible)</span>
+            @Html.CheckBoxFor(x => x.Visible)
+        </div>
+        @Html.HiddenFor(x => x.ProductID)
+        <input type="submit" value="Add" class="btn btn-default navbar-btn" />
+
+    }
+</div>

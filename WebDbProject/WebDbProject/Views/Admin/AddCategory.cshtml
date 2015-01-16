@@ -1,0 +1,19 @@
+﻿@model Eshop.Models.Category
+
+@{
+    ViewBag.Title = "AddCategory";
+}
+
+<div class="editor" style="margin: 0 auto; width: 60%; font-size: 12px;">
+    @using (Html.BeginForm("AddCategory", "Admin", FormMethod.Post)) {
+        <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">@Html.LabelFor(x => x.Name)</span>
+            @Html.TextBoxFor(x => x.Name, null, new { @class = ("form-control"), placeholder = "Title" })
+        </div>
+
+        @Html.HiddenFor(x => x.CategoryID);
+        <input type="submit" value="Add" class="btn btn-default navbar-btn" />
+
+    }
+</div>
+

@@ -1,0 +1,1 @@
+[{"CategoryID":0,"Name":"Clothes"},{"CategoryID":1,"Name":"Notebooks"},{"CategoryID":2,"Name":"Toys"},{"CategoryID":3,"Name":"Games"},{"CategoryID":4,"Name":"Porn"}]

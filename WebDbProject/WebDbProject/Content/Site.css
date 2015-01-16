@@ -1,0 +1,213 @@
+﻿html, body {
+    width: auto;
+    margin: 0;
+    font-family: Verdana;
+}
+
+body {
+    font-size: .85em;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    color: #232323;
+    background-color: #efefef;
+    width: 66%;
+    margin: auto;
+}
+
+header, footer, nav, section {
+    display: block;
+}
+
+
+/* Styles for basic forms
+-----------------------------------------------------------*/
+fieldset {
+    border: 1px solid #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+textarea {
+    min-height: 75px;
+}
+
+.editor-label {
+    margin: 1em 0 0 0;
+}
+
+.editor-field {
+    margin: 0.5em 0 0 0;
+}
+
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+
+nav {
+    width: 100%;
+    background: #9c2626;
+    height: 50px;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+
+    nav ul li {
+        border-radius: 3px;
+        transition: 0.2s ease-out;
+        display: inline-block;
+        padding: 5px;
+    }
+
+        nav ul li:hover {
+            background: #efefef;
+            transition: 0.4s ease-out;
+        }
+
+        nav ul li a {
+            color: #efefef;
+        }
+
+            nav ul li a:hover {
+                color: #9c2626;
+                text-decoration: none;
+            }
+
+.productPage {
+    background: #fff;
+    font-size: 12px;
+    padding: 10px;
+    border: 3px solid #eee;
+    border-bottom: 10px solid #eee;
+}
+
+.product {
+    background: #fff;
+    font-size: 12px;
+    height: 450px;
+    border: 3px solid #eee;
+    border-bottom: 10px solid #eee;
+}
+
+    .product header {
+        font-size: 18px;
+        margin: 10px 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .product .price {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        text-align: right;
+        padding: 5px 10px;
+    }
+
+        .product .price .without {
+            color: #e80000;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+.filters {
+    width: 200px;
+    float: left;
+}
+
+.admin-menu {
+    height: 200px;
+    width: 200px;
+    text-align: center;
+    padding-top: 90px;
+    margin: 5px;
+    box-shadow: 1px 1px 3px #aaa;
+    background: #fff;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+    .admin-menu:hover {
+        text-decoration: none;
+    }
+
+.productPage {
+    padding: 3%;
+}
+
+.review {
+    width: 90%;
+    margin: 0 auto;
+    font-size: 14px;
+    min-height: 50px;
+    overflow: auto;
+    margin-bottom: 15px;
+}
+
+    .review header {
+        font-size: 15px;
+        font-weight: bold;
+        background: #e9e9e9;
+        padding: 10px;
+    }
+
+    .review .plus, .review .minus {
+        width: 50%;
+        padding: 5px;
+    }
+
+    .review .plusminus {
+        background: #f3f3f3;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .review .plus {
+        float: left;
+    }
+
+    .review .minus {
+        float: right;
+        text-align: right;
+    }
+
+.list-group a:hover {
+    text-decoration: none;
+}
+
+.input-group {
+    margin-bottom: 5px;
+}
